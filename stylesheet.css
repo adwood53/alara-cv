@@ -1,0 +1,117 @@
+:root {
+    --red: #D94515;
+    --blue: #1C4B51;
+    --pink: #DC7C64;
+    --orange: #BB9767;
+    --beige: #B2AF8D;
+    --black: #000000;
+  }
+
+body, html {
+    background-color: var(--beige);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: var(--red);
+}
+
+#toggle-button {
+    background-color: #00000000;
+    color: var(--red);
+    display: none;
+    position: fixed; /* Fixed position */
+    top: 0; /* At the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    z-index: 1000; /* High z-index to render on top of all elements */
+    background-color: #333; /* Same as navbar */
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.navbar {
+    width: 250px; /* Width in pixels */
+    background-color: var(--orange);
+    border-right: 2px solid var(--red); /* 2px solid border on the left */
+    color: var(--black);
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+.profile-photo img {
+    border-radius: 50%; /* Make the image round */
+    border: 5px solid var(--red); /* 5-pixel white border */
+    width: 100px; /* Set width */
+    height: 100px; /* Set height */
+    object-fit: cover; /* Cover the entire circle */
+    margin-bottom: 20px; /* Add some space below the image */
+}
+
+.content {
+    border-top: 2px solid var(--red); /* 2px solid border at the top */
+    margin-left: 250px; /* Same as the width of the navbar */
+    padding: 20px;
+    height: 100%;
+}
+
+.banner {
+    margin: 0;
+    margin-left: 250px; /* Same as the width of the navbar */
+    padding: 0;
+    height: 30vh; /* Set height */
+}
+
+.banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+/* Media query for mobile screens */
+@media screen and (max-device-width: 768px) {
+    #toggle-button {
+        display: block; /* Show toggle button */
+    }
+  
+    .navbar {
+        padding: 0;
+        width: 100%; /* Full-screen width */
+        height: 0; /* Initially hidden */
+        overflow: hidden; /* Hide overflow */
+        transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition for height and padding */
+    }
+  
+    .navbar.show {
+        padding: 20px;
+        height: 100vh; /* Show navbar */
+    }
+  
+    .banner {
+        margin: 0;
+        padding: 0;
+        height: 15vh; /* Set height */
+    }
+    
+    .banner img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; 
+    }
+    
+
+    .content {
+        margin-left: 0; /* No left margin */
+    }
+}
